@@ -2,7 +2,7 @@ kind: pipeline
 name: default
 
 steps:
-  - name: base
+  - name: depot_tools
     image: plugins/docker
     settings:
       repo: v7lin/depot_tools
@@ -17,7 +17,7 @@ steps:
 #    when:
 #      event:
 #        - tag
-  - name: publish
+  - name: flutter-jit
     image: plugins/docker
     settings:
       repo: v7lin/flutter-jit
