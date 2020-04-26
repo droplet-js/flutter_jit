@@ -2,7 +2,7 @@
 
 FROM v7lin/depot_tools as build
 
-COPY engine engine
+COPY ../../engine engine
 
 RUN ls engine
 
