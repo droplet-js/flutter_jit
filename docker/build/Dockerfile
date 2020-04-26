@@ -6,8 +6,8 @@ ENV ENGINE_PATH $HOME/engine
 
 COPY engine $ENGINE_PATH
 
-RUN echo $PWD
-RUN ls engine -a
+#RUN echo $PWD
+#RUN ls engine -a
 
 WORKDIR $ENGINE_PATH
 RUN gclient sync --verbose
