@@ -6,7 +6,7 @@ steps:
 #    image: plugins/docker
 #    settings:
 #      repo: v7lin/depot_tools
-##      context: docker/depot_tools
+#      context: docker/depot_tools
 #      dockerfile: docker/depot_tools/Dockerfile
 #      username:
 #        from_secret: REGISTRY_USER
@@ -21,6 +21,7 @@ steps:
     image: plugins/docker
     settings:
       repo: v7lin/flutter-jit
+      context: docker/build
       dockerfile: docker/build/Dockerfile
       target: prod
       username:

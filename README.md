@@ -16,6 +16,12 @@ export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087
 export http_proxy=http://127.0.0.1:16005;export https_proxy=http://127.0.0.1:16005;
 ```
 
+* 切换工作目录
+
+```shell script
+cd docker/build
+```
+
 * 配置depot_tools工具
 
 ```shell script
