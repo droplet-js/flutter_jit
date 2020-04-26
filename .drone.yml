@@ -21,7 +21,6 @@ steps:
     image: plugins/docker
     settings:
       repo: v7lin/flutter-jit
-      context: ../..
       dockerfile: docker/build/Dockerfile
       target: prod
       username:
