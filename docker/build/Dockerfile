@@ -2,9 +2,11 @@
 
 FROM v7lin/depot_tools as build
 
-COPY engine engine
+ENV ENGINE_PATH $HOME/engine
 
-RUN ls engine
+COPY engine $ENGINE_PATH
+
+RUN ls engine -a
 
 # --- prod ---
 
