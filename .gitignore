@@ -70,6 +70,3 @@ $RECYCLE.BIN/
 
 # ---> flutter_jit
 .idea/
-depot_tools/
-engine/
-!engine/.gclient
