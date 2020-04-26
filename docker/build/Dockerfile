@@ -6,7 +6,8 @@ ENV ENGINE_PATH $HOME/engine
 
 COPY engine $ENGINE_PATH
 
-# RUN ls engine -a
+RUN echo $PWD
+RUN ls engine -a
 
 WORKDIR $ENGINE_PATH
 RUN gclient sync --verbose
@@ -25,4 +26,10 @@ RUN ./flutter/tools/gn --runtime-mode jit_release --android-cpu arm64 && \
 
 # --- prod ---
 
-FROM alpine:3.9 as prod
+FROM runmymind/docker-android-sdk as prod
+
+MAINTAINER v7lin <v7lin@qq.com>
+
+#ENV PATH=$PATH:/opt/flutter/bin
+
+COPY --from=build /engine /opt/engine
