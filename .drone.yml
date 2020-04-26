@@ -2,21 +2,21 @@ kind: pipeline
 name: default
 
 steps:
-  - name: depot_tools
-    image: plugins/docker
-    settings:
-      repo: v7lin/depot_tools
-      context: docker/depot_tools
-      dockerfile: docker/depot_tools/Dockerfile
-      username:
-        from_secret: REGISTRY_USER
-      password:
-        from_secret: REGISTRY_PASSWORD
-      tags:
-        - latest
-#    when:
-#      event:
-#        - tag
+#  - name: depot_tools
+#    image: plugins/docker
+#    settings:
+#      repo: v7lin/depot_tools
+#      context: docker/depot_tools
+#      dockerfile: docker/depot_tools/Dockerfile
+#      username:
+#        from_secret: REGISTRY_USER
+#      password:
+#        from_secret: REGISTRY_PASSWORD
+#      tags:
+#        - latest
+##    when:
+##      event:
+##        - tag
   - name: flutter-jit
     image: plugins/docker
     settings:
