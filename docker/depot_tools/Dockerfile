@@ -1,4 +1,5 @@
-FROM ubuntu:18.04
+# runmymind/docker-android-sdk -> ubuntu:18.04
+FROM ubuntu:16.04
 
 ENV DEPOT_TOOLS_PATH=$HOME/depot_tools
 ENV BUILDROOT_PATH=$HOME/buildroot

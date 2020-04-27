@@ -14,9 +14,12 @@ steps:
         from_secret: REGISTRY_PASSWORD
       tags:
         - latest
-#    when:
-#      event:
+    when:
+      event:
 #        - tag
+        exclude:
+          - pull_request
+
   - name: flutter-jit
     image: plugins/docker
     settings:
@@ -31,6 +34,8 @@ steps:
       tags:
         - latest
 #        - ${DRONE_TAG}
-#    when:
-#      event:
+    when:
+      event:
 #        - tag
+        exclude:
+          - pull_request
