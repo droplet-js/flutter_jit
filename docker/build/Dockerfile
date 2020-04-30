@@ -21,16 +21,30 @@ RUN ENGINE_VERSION=$(cat engine.version) && sed -i "s|$ENGINE_GITURL|$ENGINE_GIT
 RUN gclient sync --verbose
 
 WORKDIR $ENGINE_PATH/src
+
+## jit
+## arm
+#RUN ./flutter/tools/gn --android --runtime-mode jit_release --android-cpu arm && \
+#    ninja -C out/android_jit_release
+#RUN ./flutter/tools/gn --runtime-mode jit_release --android-cpu arm && \
+#    ninja -C out/host_jit_release
+## arm64
+#RUN ./flutter/tools/gn --android --runtime-mode jit_release --android-cpu arm64 && \
+#    ninja -C out/android_jit_release_arm64
+#RUN ./flutter/tools/gn --runtime-mode jit_release --android-cpu arm64 && \
+#    ninja -C out/host_jit_release_arm64
+
+# aot
 # arm
-RUN ./flutter/tools/gn --android --runtime-mode jit_release --android-cpu arm && \
-    ninja -C out/android_jit_release
-RUN ./flutter/tools/gn --runtime-mode jit_release --android-cpu arm && \
-    ninja -C out/host_jit_release
+RUN ./flutter/tools/gn --android --runtime-mode release --android-cpu arm && \
+    ninja -C out/android_release
+RUN ./flutter/tools/gn --runtime-mode release --android-cpu arm && \
+    ninja -C out/host_release
 # arm64
-RUN ./flutter/tools/gn --android --runtime-mode jit_release --android-cpu arm64 && \
-    ninja -C out/android_jit_release_arm64
-RUN ./flutter/tools/gn --runtime-mode jit_release --android-cpu arm64 && \
-    ninja -C out/host_jit_release_arm64
+RUN ./flutter/tools/gn --android --runtime-mode release --android-cpu arm64 && \
+    ninja -C out/android_release_arm64
+RUN ./flutter/tools/gn --runtime-mode release --android-cpu arm64 && \
+    ninja -C out/host_release_arm64
 
 # --- prod ---
 
